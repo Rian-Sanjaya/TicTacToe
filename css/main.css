@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+.wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.outer-box {
+	position: absolute;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	width: 350px;
+	height: 570px;
+	background: #222;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+.inner-box {
+	height: 100%;
+	border: 4px solid #F4A460;
+	border-radius: 5px;
+	color: #fff;
+}
+
+h3:first-child { text-align: center; margin: 10px 0 20px 0; font-size: 2.5em;}
+
+.board {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.rows {
+	/*display: flex is used to solve the gap cuase by whitespace for inline element*/
+	/*another solution is to remove the whitespace in the markup (html file): */
+	/*display: flex;*/
+	line-height: 0;		/*this solve vertical gap between div*/
+}
+
+.cells {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	border-top: 3px solid #fff;
+	border-right: 3px solid #fff;
+	text-align: center;
+	vertical-align: middle;		/*set elements next to each other on a line (as in inline (span, img, etc) or inline-block) are lined up*/
+	cursor: pointer;			/*make cursor pointer on non occupied cell, and set it to default (in javascript function) when occupied*/
+}
+.row0 .cells { border-top: none; }
+.rows .cells:last-child { border-right: none; }
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: black; 	/*fallback color*/
+	background: rgba(0, 0, 0, .6);
+}
+.modalContent {
+	background: rgb(240, 240, 240);
+	color: rgb(32, 32, 32);
+	/* 16 % from the top and centered */
+	margin: 16% auto;
+	width: 380px;
+	max-width: 80%;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	position: relative;
+	font-size: 1.3em;
+}
+#okBtn { font-size: 1.2em; }
+
+.close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.x {
+	color: darksalmon;
+	font-size: 7em;
+	font-weight: bold;
+	cursor: default;
+}
+
+.o {
+	color: aquamarine;
+	font-size: 7em;
+	cursor: default;
+	position: relative;
+	top: -13px;
+}
+
+#restart {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 1.5em;
+}
+#restart span {
+		cursor: pointer;
+}
+
+.score-display {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 1.4em;
+}
+.computer,
+.tie,
+.player {
+	display: inline-block;
+	margin-right: 20px;
+}
+.comp-title,
+.tie-title,
+.player-title {
+	text-decoration: underline;
+}
+
+.win-color { background: rgb(240, 240, 240); }
