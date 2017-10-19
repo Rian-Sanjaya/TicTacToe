@@ -1,3 +1,3 @@
 TicTacToe using vanilla JavaScript only.
 
-preview: https://rawgit.com/rian-sanjaya/master/TicTacToe/index.html
+preview: https://rawgit.com/Rian-Sanjaya/TicTacToe/master/index.html
